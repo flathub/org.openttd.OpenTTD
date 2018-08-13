@@ -90,7 +90,7 @@ modules:
   - name: opengfx
     buildsystem: simple
     build-commands:
-      - tar -xf opengfx-0.5.2.tar
+      - tar -xf opengfx*.tar
       - mkdir -p /app/share/games/openttd/baseset/opengfx
       - cp -r opengfx*/* /app/share/games/openttd/baseset/opengfx
     sources:
