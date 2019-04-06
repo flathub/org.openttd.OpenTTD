@@ -31,19 +31,19 @@ modules:
         path: icudata-stdlibs.patch
     subdir: source
 
-  - name: libtimidity
+  - name: fluidsynth
+    buildsystem: cmake
     config-opts:
-      - --enable-shared
-      - --disable-static
+      - -DLIB_INSTALL_DIR=lib
     cleanup:
+      - /bin
       - /include
-      - /lib/*.la
       - /lib/pkgconfig
       - /share
     sources:
       - type: archive
-        url: https://downloads.sourceforge.net/project/libtimidity/libtimidity/0.2.5/libtimidity-0.2.5.tar.gz
-        sha256: 2cb4ad5cfd6b9a2ed84e596887dc7b26fba84785b4bf855505c310cc8ffcf307
+        url: https://github.com/FluidSynth/fluidsynth/archive/v2.0.4.tar.gz
+        sha256: 2c065de87e9c9ba0311ebf2f4828a4fd76f1f5cc7d1d93dd80d7a048d7d2a76c
 
   - name: libxdg-basedir
     config-opts:
@@ -78,6 +78,7 @@ modules:
       - --prefix-dir=/app
       - --binary-dir=/bin
       - --with-liblzo2=/app/lib/liblzo2.so.2
+      - --with-fluidsynth=/app/lib/libfluidsynth.so.2
     post-install:
       - install -Dm644 org.openttd.OpenTTD.appdata.xml /app/share/appdata/org.openttd.OpenTTD.appdata.xml
     sources:
