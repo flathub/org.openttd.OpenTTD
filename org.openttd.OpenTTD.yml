@@ -82,8 +82,8 @@ modules:
       - install -Dm644 org.openttd.OpenTTD.appdata.xml /app/share/appdata/org.openttd.OpenTTD.appdata.xml
     sources:
       - type: archive
-        url: https://binaries.openttd.org/releases/1.8.0/openttd-1.8.0-source.tar.xz
-        sha256: c2d32d9d736d27202a020027a3729ae763f5432ae6f424891e57a4095eeb087f
+        url: https://proxy.binaries.openttd.org/openttd-releases/1.9.0/openttd-1.9.0-source.tar.xz
+        sha256: 45fded554d973328496f6e01b0769d7b8b64048a8fe2cf252242194c08ea7419
       - type: file
         path: org.openttd.OpenTTD.appdata.xml
   
