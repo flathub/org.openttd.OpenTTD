@@ -87,7 +87,7 @@ modules:
       - --prefix-dir=/app
       - --binary-dir=/bin
       - --with-liblzo2=/app/lib/liblzo2.so.2
-      - --with-fluidsynth=/app/lib/libfluidsynth.so.2
+      - --with-fluidsynth=/app/lib/libfluidsynth.so.1
     post-install:
       - install -Dm644 org.openttd.OpenTTD.appdata.xml /app/share/appdata/org.openttd.OpenTTD.appdata.xml
     sources:
