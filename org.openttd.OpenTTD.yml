@@ -94,6 +94,8 @@ modules:
       - type: archive
         url: https://proxy.binaries.openttd.org/openttd-releases/1.9.1/openttd-1.9.1-source.tar.xz
         sha256: ff8158c1ddffebdb807fea8057c038fce1171e544fe11523e2ea70febe3711e5
+      - type: patch
+        path: soundfont-path.patch
       - type: file
         path: org.openttd.OpenTTD.appdata.xml
   
