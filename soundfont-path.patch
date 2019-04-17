@@ -1,6 +1,6 @@
-From 719c54577986e7b922b4972637486a78b65ca51c Mon Sep 17 00:00:00 2001
+From a9372026f9a21611bac5326de0e1a4e39e0cab49 Mon Sep 17 00:00:00 2001
 From: Ghislain Antony Vaillant <ghisvail@gmail.com>
-Date: Wed, 17 Apr 2019 21:39:52 +0200
+Date: Wed, 17 Apr 2019 22:01:05 +0200
 Subject: [PATCH] Add soundfont path for Flatpak
 
 ---
@@ -8,7 +8,7 @@ Subject: [PATCH] Add soundfont path for Flatpak
  1 file changed, 3 insertions(+)
 
 diff --git a/src/music/fluidsynth.cpp b/src/music/fluidsynth.cpp
-index 4623716a4..37d7e9a2e 100644
+index 6baeb899b..c5b21565c 100644
 --- a/src/music/fluidsynth.cpp
 +++ b/src/music/fluidsynth.cpp
 @@ -39,6 +39,9 @@ static const char *default_sf[] = {
@@ -18,7 +18,7 @@ index 4623716a4..37d7e9a2e 100644
 +	/* Flatpak */
 +	"/app/share/sounds/sf2/FluidR3_GM.sf2",
 +
- 	nullptr
+ 	NULL
  };
  
 -- 
