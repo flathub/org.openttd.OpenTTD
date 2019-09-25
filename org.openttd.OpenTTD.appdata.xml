@@ -22,7 +22,7 @@
   <developer_name>The OpenTTD team</developer_name>
   <update_contact>info@openttd.org</update_contact>
   <releases>
-    <release version="1.9.2" date="2019-07-08"/>
+    <release version="1.9.3" date="2019-09-16"/>
   </releases>
   <content_rating type="oars-1.0">
     <content_attribute id="violence-cartoon">none</content_attribute>
