@@ -92,8 +92,8 @@ modules:
       - install -Dm644 org.openttd.OpenTTD.appdata.xml /app/share/appdata/org.openttd.OpenTTD.appdata.xml
     sources:
       - type: archive
-        url: https://proxy.binaries.openttd.org/openttd-releases/1.9.3/openttd-1.9.3-source.tar.xz
-        sha256: 1988e17f5b6f4b8f423c849ef1c579c21f678722ae4440f87b27a5fea6385846
+        url: https://cdn.openttd.org/openttd-releases/1.10.0/openttd-1.10.0-source.tar.xz
+        sha256: 1ba21aac9a1de98b23f80fee952b4b9c5e2d3cc4ac187f5203730826b3f0e253
       - type: patch
         path: soundfont-path.patch
       - type: file
