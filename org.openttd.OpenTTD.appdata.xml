@@ -22,7 +22,7 @@
   <developer_name>The OpenTTD team</developer_name>
   <update_contact>info@openttd.org</update_contact>
   <releases>
-    <release version="1.9.3" date="2019-09-16"/>
+    <release version="1.10.0" date="2020-04-01"/>
   </releases>
   <content_rating type="oars-1.1"/>
 </component>
