@@ -117,7 +117,7 @@ modules:
       - cp -r * /app/share/games/openttd/baseset/openmsx
     sources:
       - type: archive
-        url: https://binaries.openttd.org/extra/openmsx/0.3.1/openmsx-0.3.1-all.zip
+        url: https://cdn.openttd.org/openmsx-releases/0.3.1/openmsx-0.3.1-all.zip
         sha256: 92e293ae89f13ad679f43185e83fb81fb8cad47fe63f4af3d3d9f955130460f5
   
   - name: opensfx
@@ -127,7 +127,7 @@ modules:
       - cp -r * /app/share/games/openttd/baseset/opensfx
     sources:
       - type: archive
-        url: https://binaries.openttd.org/extra/opensfx/0.2.3/opensfx-0.2.3-all.zip
+        url: https://cdn.openttd.org/opensfx-releases/0.2.3/opensfx-0.2.3-all.zip
         sha256: 6831b651b3dc8b494026f7277989a1d757961b67c17b75d3c2e097451f75af02
 
   - name: freepats
