@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<component type="desktop">
+<!--Copyright 2018-2020 Flathub maintainers-->
+<component type="desktop-application">
   <id>org.openttd.OpenTTD.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>Apache-2.0</project_license>
@@ -13,14 +14,27 @@
       extending it with new features.
     </p>
   </description>
+  <launchable type="desktop-id">openttd.desktop</launchable>
   <screenshots>
     <screenshot type="default">
       <image>https://media.openttd.org/images/screens/1.4/02-opengfx-1920x1200.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://www.openttd.org/screenshots/1.9-darkuk-1.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://www.openttd.org/screenshots/1.9-darkuk-2.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://www.openttd.org/screenshots/1.9-darkuk-3.png</image>
     </screenshot>
   </screenshots>
   <url type="homepage">https://www.openttd.org/</url>
   <developer_name>The OpenTTD team</developer_name>
   <update_contact>info@openttd.org</update_contact>
+  <provides>
+    <binary>openttd</binary>
+  </provides>
   <releases>
     <release version="1.10.0" date="2020-04-01"/>
   </releases>
