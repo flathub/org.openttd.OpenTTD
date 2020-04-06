@@ -102,7 +102,7 @@ modules:
       - --with-liblzo2=/app/lib/liblzo2.so.2
       - --with-fluidsynth=/app/lib/libfluidsynth.so.1
     post-install:
-      - install -Dm644 org.openttd.OpenTTD.appdata.xml /app/share/appdata/org.openttd.OpenTTD.appdata.xml
+      - install -D -m 644 -t $FLATPAK_DEST/share/metainfo org.openttd.OpenTTD.metainfo.xml
     sources:
       - type: archive
         url: https://cdn.openttd.org/openttd-releases/1.10.0/openttd-1.10.0-source.tar.xz
@@ -110,7 +110,7 @@ modules:
       - type: patch
         path: soundfont-path.patch
       - type: file
-        path: org.openttd.OpenTTD.appdata.xml
+        path: org.openttd.OpenTTD.metainfo.xml
   
   - name: opengfx
     buildsystem: simple
