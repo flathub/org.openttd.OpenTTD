@@ -32,6 +32,9 @@
   <url type="homepage">https://www.openttd.org/</url>
   <developer_name>The OpenTTD team</developer_name>
   <update_contact>info@openttd.org</update_contact>
+  <provides>
+    <binary>openttd</binary>
+  </provides>
   <releases>
     <release version="1.10.0" date="2020-04-01"/>
   </releases>
