@@ -92,6 +92,11 @@ modules:
       - type: archive
         url: https://cdn.openttd.org/openttd-releases/1.10.0/openttd-1.10.0-source.tar.xz
         sha256: 1ba21aac9a1de98b23f80fee952b4b9c5e2d3cc4ac187f5203730826b3f0e253
+        x-checker-data:
+          type: html
+          url: https://www.openttd.org
+          version-pattern: "Latest version: ((?:\\d+\\.)?(?:\\d+\\.)?\\d+)"
+          url-template: "https://cdn.openttd.org/openttd-releases/$version/openttd-$version-source.tar.xz"
       - type: patch
         path: soundfont-path.patch
       - type: file
