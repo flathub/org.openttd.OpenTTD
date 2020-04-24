@@ -1,6 +1,6 @@
 app-id: org.openttd.OpenTTD
 runtime: org.freedesktop.Platform
-runtime-version: "19.08"
+runtime-version: '19.08'
 sdk: org.freedesktop.Sdk
 command: openttd
 rename-icon: openttd
@@ -50,7 +50,7 @@ modules:
     sources:
       - type: archive
         url: http://deb.debian.org/debian/pool/main/f/fluid-soundfont/fluid-soundfont_3.1.orig.tar.gz
-        sha256: 2621acaa1c78e4abdb24bdd163230cc577e61276936d6aa6e3180582142f0343 
+        sha256: 2621acaa1c78e4abdb24bdd163230cc577e61276936d6aa6e3180582142f0343
 
   - name: libxdg-basedir
     config-opts:
@@ -90,18 +90,19 @@ modules:
       - install -D -m 644 -t $FLATPAK_DEST/share/metainfo org.openttd.OpenTTD.metainfo.xml
     sources:
       - type: archive
-        url: https://cdn.openttd.org/openttd-releases/1.10.0/openttd-1.10.0-source.tar.xz
-        sha256: 1ba21aac9a1de98b23f80fee952b4b9c5e2d3cc4ac187f5203730826b3f0e253
+        url: https://cdn.openttd.org/openttd-releases/1.10.1/openttd-1.10.1-source.tar.xz
+        sha256: 0d22a3c50f7a321f4f211594f4987ac16c381e8e3e40f116848e63e91e7fbb9b
         x-checker-data:
           type: html
           url: https://www.openttd.org
-          version-pattern: "Latest version: ((?:\\d+\\.)?(?:\\d+\\.)?\\d+)"
-          url-template: "https://cdn.openttd.org/openttd-releases/$version/openttd-$version-source.tar.xz"
+          version-pattern: 'Latest version: ((?:\d+\.)?(?:\d+\.)?\d+)'
+          url-template: https://cdn.openttd.org/openttd-releases/$version/openttd-$version-source.tar.xz
+        size: 6741548
       - type: patch
         path: soundfont-path.patch
       - type: file
         path: org.openttd.OpenTTD.metainfo.xml
-  
+
   - name: opengfx
     buildsystem: simple
     build-commands:
@@ -112,7 +113,7 @@ modules:
       - type: archive
         url: https://cdn.openttd.org/opengfx-releases/0.6.0/opengfx-0.6.0-all.zip
         sha256: d419c0f5f22131de15f66ebefde464df3b34eb10e0645fe218c59cbc26c20774
-  
+
   - name: openmsx
     buildsystem: simple
     build-commands:
@@ -122,7 +123,7 @@ modules:
       - type: archive
         url: https://cdn.openttd.org/openmsx-releases/0.3.1/openmsx-0.3.1-all.zip
         sha256: 92e293ae89f13ad679f43185e83fb81fb8cad47fe63f4af3d3d9f955130460f5
-  
+
   - name: opensfx
     buildsystem: simple
     build-commands:

@@ -36,6 +36,7 @@
     <binary>openttd</binary>
   </provides>
   <releases>
+    <release version="1.10.1" date="2020-04-13"/>
     <release version="1.10.0" date="2020-04-01"/>
   </releases>
   <content_rating type="oars-1.1"/>
