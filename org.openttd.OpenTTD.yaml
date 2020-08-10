@@ -90,14 +90,14 @@ modules:
       - install -D -m 644 -t $FLATPAK_DEST/share/metainfo org.openttd.OpenTTD.metainfo.xml
     sources:
       - type: archive
-        url: https://cdn.openttd.org/openttd-releases/1.10.2/openttd-1.10.2-source.tar.xz
-        sha256: 939c55d259fb13cb47dfb3244e8f7b9e2f723883ebb2119410d8a282724eb6f5
+        url: https://cdn.openttd.org/openttd-releases/1.10.3/openttd-1.10.3-source.tar.xz
+        sha256: c11601ef547eb1f6d4f9a035bd19e0a760b47872ce7d9b4117aaa45ac377b53b
         x-checker-data:
           type: html
           url: https://www.openttd.org
           version-pattern: 'Latest version: ((?:\d+\.)?(?:\d+\.)?\d+)'
           url-template: https://cdn.openttd.org/openttd-releases/$version/openttd-$version-source.tar.xz
-        size: 6766904
+        size: 6815924
       - type: patch
         path: soundfont-path.patch
       - type: file
