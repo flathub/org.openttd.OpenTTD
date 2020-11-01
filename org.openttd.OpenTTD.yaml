@@ -40,8 +40,8 @@ modules:
       - /share
     sources:
       - type: archive
-        url: https://github.com/FluidSynth/fluidsynth/archive/v1.1.11.tar.gz
-        sha256: da8878ff374d12392eecf87e96bad8711b8e76a154c25a571dd8614d1af80de8
+        url: https://github.com/FluidSynth/fluidsynth/archive/v2.1.5.tar.gz
+        sha256: b539b7c65a650b56f01cd60a4e83c6125c217c5a63c0c214ef6274894a677d00
 
   - name: fluid-soundfont
     buildsystem: simple
@@ -85,7 +85,7 @@ modules:
       - --prefix-dir=/app
       - --binary-dir=/bin
       - --with-liblzo2=/app/lib/liblzo2.so.2
-      - --with-fluidsynth=/app/lib/libfluidsynth.so.1
+      - --with-fluidsynth=/app/lib/libfluidsynth.so.2
     post-install:
       - install -D -m 644 -t $FLATPAK_DEST/share/metainfo org.openttd.OpenTTD.metainfo.xml
     sources:
