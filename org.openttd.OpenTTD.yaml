@@ -14,6 +14,9 @@ finish-args:
   - --socket=x11
 modules:
   - name: icu
+    config-opts:
+      - CC=gcc
+      - CXX=g++
     cleanup:
       - /bin
       - /include
