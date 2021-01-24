@@ -66,23 +66,19 @@ modules:
         sha256: c0f892943208266f9b6543b3ae308fab6284c5c90e627931446fb49b4221a072
 
   - name: openttd
-    config-opts:
-      - --prefix-dir=/app
-      - --binary-dir=/bin
-      - --with-liblzo2=/app/lib/liblzo2.so.2
-      - --with-fluidsynth=/app/lib/libfluidsynth.so.2
+    buildsystem: cmake-ninja
+    builddir: true
     post-install:
       - install -D -m 644 -t $FLATPAK_DEST/share/metainfo org.openttd.OpenTTD.metainfo.xml
     sources:
       - type: archive
-        url: https://cdn.openttd.org/openttd-releases/1.10.3/openttd-1.10.3-source.tar.xz
-        sha256: c11601ef547eb1f6d4f9a035bd19e0a760b47872ce7d9b4117aaa45ac377b53b
+        url: https://cdn.openttd.org/openttd-releases/1.11.0-beta1/openttd-1.11.0-beta1-source.tar.xz
+        sha256: 55bb6fb03baa0f6a833152f2b460e299705b68498201158e26739091f4312745
         x-checker-data:
           type: html
           url: https://www.openttd.org
           version-pattern: 'Latest version: ((?:\d+\.)?(?:\d+\.)?\d+)'
           url-template: https://cdn.openttd.org/openttd-releases/$version/openttd-$version-source.tar.xz
-        size: 6815924
       - type: patch
         path: soundfont-path.patch
       - type: file
