@@ -69,7 +69,7 @@ modules:
     buildsystem: cmake-ninja
     builddir: true
     post-install:
-      - install -D -m 644 -t $FLATPAK_DEST/share/metainfo org.openttd.OpenTTD.metainfo.xml
+      - install -D -m 644 -t $FLATPAK_DEST/share/metainfo ../org.openttd.OpenTTD.metainfo.xml
     sources:
       - type: archive
         url: https://cdn.openttd.org/openttd-releases/1.11.0-beta1/openttd-1.11.0-beta1-source.tar.xz
