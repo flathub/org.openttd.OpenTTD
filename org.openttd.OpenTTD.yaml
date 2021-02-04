@@ -37,20 +37,6 @@ modules:
         url: http://deb.debian.org/debian/pool/main/f/fluid-soundfont/fluid-soundfont_3.1.orig.tar.gz
         sha256: 2621acaa1c78e4abdb24bdd163230cc577e61276936d6aa6e3180582142f0343
 
-  - name: libxdg-basedir
-    config-opts:
-      - --enable-shared
-      - --disable-static
-    cleanup:
-      - /include
-      - /lib/*.la
-      - /lib/pkgconfig
-      - /share
-    sources:
-      - type: archive
-        url: https://github.com/devnev/libxdg-basedir/archive/libxdg-basedir-1.2.0.tar.gz
-        sha256: 1c2b0032a539033313b5be2e48ddd0ae94c84faf21d93956d53562eef4614868
-
   - name: lzo
     config-opts:
       - --enable-shared
