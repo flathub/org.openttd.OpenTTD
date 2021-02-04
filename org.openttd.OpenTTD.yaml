@@ -52,6 +52,8 @@ modules:
         sha256: c0f892943208266f9b6543b3ae308fab6284c5c90e627931446fb49b4221a072
 
   - name: openttd
+    config-opts:
+      - -DCMAKE_BUILD_TYPE:STRING=RelWithDebInfo
     buildsystem: cmake-ninja
     builddir: true
     post-install:
