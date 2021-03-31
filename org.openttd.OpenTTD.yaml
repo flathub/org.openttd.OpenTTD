@@ -17,7 +17,6 @@ modules:
     buildsystem: cmake
     config-opts:
       - -DLIB_INSTALL_DIR:STRING=lib
-      - -DDEFAULT_SOUNDFONT:FILEPATH=/app/share/sounds/sf3/default-GM.sf3
     cleanup:
       - /bin
       - /include
@@ -28,15 +27,15 @@ modules:
         url: https://github.com/FluidSynth/fluidsynth/archive/v2.1.8.tar.gz
         sha256: a254efceff5d99f8d658d12d25318317f37307e6df852ec9baeb7da173496967
 
-  - name: fluidr3mono-gm-soundfont
+  - name: opl3-soundfont
     buildsystem: simple
     build-commands:
-      - install -D -m 644 -t $FLATPAK_DEST/share/sounds/sf3 FluidR3Mono_GM.sf3
-      - ln -s $FLATPAK_DEST/share/sounds/sf3/{FluidR3Mono_GM,default-GM}.sf3
+      - install -D -m 644 -t /app/share/soundfonts OPL-3_FM_128M.sf2
+      - ln -s $FLATPAK_DEST/share/soundfonts/{OPL-3_FM_128M,default}.sf2
     sources:
       - type: file
-        url: https://github.com/musescore/MuseScore/raw/2.1/share/sound/FluidR3Mono_GM.sf3
-        sha256: cfcd66d89e8386823400eca64934b14fbea7bf48ba1f00d21189af1262794ec2
+        url: https://github.com/Mindwerks/opl3-soundfont/releases/download/1.0/OPL-3_FM_128M.sf2
+        sha256: 39bff96eee3dcfbce9665e3968701b894ca2136c7d0bd580281b2bbf59e80392
 
   - name: lzo
     config-opts:
