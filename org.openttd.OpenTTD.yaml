@@ -64,8 +64,8 @@ modules:
       - install -D -m 644 -t $FLATPAK_DEST/share/icons/hicolor/scalable/apps ../media/openttd.svg
     sources:
       - type: archive
-        url: https://cdn.openttd.org/openttd-releases/1.11.0-beta2/openttd-1.11.0-beta2-source.tar.xz
-        sha256: 40a2744d6b9845a852236d1f5972f994ff6d65148911e96399124e70e0542898
+        url: https://cdn.openttd.org/openttd-releases/1.11.0/openttd-1.11.0-source.tar.xz
+        sha256: 5e65184e07368ba1afa62dbb3e35abaee6c4da6730ff4bc9eb4447d53363c7a8
         x-checker-data:
           type: html
           url: https://www.openttd.org
