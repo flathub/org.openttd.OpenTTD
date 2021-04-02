@@ -58,10 +58,9 @@ modules:
     buildsystem: cmake-ninja
     builddir: true
     post-install:
-      - install -D -m 644 -t $FLATPAK_DEST/share/metainfo ../org.openttd.OpenTTD.metainfo.xml
-      - install -D -m 644 -t $FLATPAK_DEST/share/applications ../openttd.desktop
       - for s in 16 32 48 64 128 256; do install -D -m 644 -t $FLATPAK_DEST/share/icons/hicolor/${s}x${s}/apps ../media/openttd.${s}.png; done
       - install -D -m 644 -t $FLATPAK_DEST/share/icons/hicolor/scalable/apps ../media/openttd.svg
+      - install -D -m 644 -t $FLATPAK_DEST/share/metainfo ../org.openttd.OpenTTD.metainfo.xml
     sources:
       - type: archive
         url: https://cdn.openttd.org/openttd-releases/1.11.0/openttd-1.11.0-source.tar.xz
@@ -75,8 +74,6 @@ modules:
         path: soundfont-path.patch
       - type: file
         path: org.openttd.OpenTTD.metainfo.xml
-      - type: file
-        path: openttd.desktop
 
   - name: opengfx
     buildsystem: simple
