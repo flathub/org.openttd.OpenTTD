@@ -1,5 +1,4 @@
 app-id: org.openttd.OpenTTD
-default-branch: beta
 runtime: org.freedesktop.Platform
 runtime-version: '20.08'
 sdk: org.freedesktop.Sdk
