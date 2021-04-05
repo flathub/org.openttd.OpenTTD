@@ -30,7 +30,8 @@ modules:
   - name: fluid-soundfont
     buildsystem: simple
     build-commands:
-      - install -Dm644 -t /app/share/sounds/sf2 FluidR3_GM.sf2
+      - install -D -m 644 -t $FLATPAK_DEST/share/soundfonts FluidR3_GM.sf2
+      - ln -s $FLATPAK_DEST/share/soundfonts/{FluidR3_GM,default}.sf2
     sources:
       - type: archive
         url: http://deb.debian.org/debian/pool/main/f/fluid-soundfont/fluid-soundfont_3.1.orig.tar.gz

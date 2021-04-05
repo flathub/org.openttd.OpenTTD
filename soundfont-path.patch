@@ -1,23 +1,40 @@
-From 0b026778dad96ded3e3d1a5def8bfe0465f1c0f4 Mon Sep 17 00:00:00 2001
+From 7d978747d45ec697fa2dca75e22cc4659b4f5f5f Mon Sep 17 00:00:00 2001
 From: Ghislain Antony Vaillant <ghisvail@gmail.com>
-Date: Wed, 17 Apr 2019 22:01:05 +0200
-Subject: [PATCH] Add soundfont path for Flatpak
+Date: Mon, 5 Apr 2021 17:26:41 +0200
+Subject: [PATCH] Fix: Use FluidSynth default soundfont
 
 
 diff --git a/src/music/fluidsynth.cpp b/src/music/fluidsynth.cpp
-index 64abe0e53..04e913b27 100644
+index 61686a441..763e0476b 100644
 --- a/src/music/fluidsynth.cpp
 +++ b/src/music/fluidsynth.cpp
-@@ -39,6 +39,9 @@ static const char *default_sf[] = {
- 	"/usr/share/sounds/sf2/TimGM6mb.sf2",
- 	"/usr/share/sounds/sf2/FluidR3_GS.sf2",
- 
-+	/* Flatpak */
-+	"/app/share/sounds/sf2/FluidR3_GM.sf2",
+@@ -77,12 +77,21 @@ const char *MusicDriver_FluidSynth::Start(const StringList &param)
+ 	/* Load a SoundFont and reset presets (so that new instruments
+ 	 * get used from the SoundFont) */
+ 	if (!sfont_name) {
+-		int i;
+ 		sfont_id = FLUID_FAILED;
+-		for (i = 0; default_sf[i]; i++) {
+-			if (!fluid_is_soundfont(default_sf[i])) continue;
+-			sfont_id = fluid_synth_sfload(_midi.synth, default_sf[i], 1);
+-			if (sfont_id != FLUID_FAILED) break;
 +
- 	nullptr
- };
- 
++		/* Try loading the default soundfont registered with FluidSynth. */
++		char *default_soundfont;
++		fluid_settings_dupstr(_midi.settings, "synth.default-soundfont", &default_soundfont);
++		if (fluid_is_soundfont(default_soundfont))
++			sfont_id = fluid_synth_sfload(_midi.synth, default_soundfont, 1);
++
++		/* If no default soundfont found, try our own list. */
++		if (sfont_id == FLUID_FAILED) {
++			for (int i = 0; default_sf[i]; i++) {
++				if (!fluid_is_soundfont(default_sf[i])) continue;
++				sfont_id = fluid_synth_sfload(_midi.synth, default_sf[i], 1);
++				if (sfont_id != FLUID_FAILED) break;
++			}
+ 		}
+ 		if (sfont_id == FLUID_FAILED) return "Could not open any sound font";
+ 	} else {
 -- 
-2.20.1
+2.30.2
 
