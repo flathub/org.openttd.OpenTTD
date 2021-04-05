@@ -16,7 +16,8 @@ modules:
   - name: fluidsynth
     buildsystem: cmake
     config-opts:
-      - -DLIB_INSTALL_DIR=lib
+      - -DLIB_INSTALL_DIR:STRING=lib
+      - -DDEFAULT_SOUNDFONT:FILEPATH=/app/share/sounds/sf3/default-GM.sf3
     cleanup:
       - /bin
       - /include
@@ -27,15 +28,15 @@ modules:
         url: https://github.com/FluidSynth/fluidsynth/archive/v2.1.8.tar.gz
         sha256: a254efceff5d99f8d658d12d25318317f37307e6df852ec9baeb7da173496967
 
-  - name: fluid-soundfont
+  - name: fluidr3mono-gm-soundfont
     buildsystem: simple
     build-commands:
-      - install -D -m 644 -t $FLATPAK_DEST/share/soundfonts FluidR3_GM.sf2
-      - ln -s $FLATPAK_DEST/share/soundfonts/{FluidR3_GM,default}.sf2
+      - install -D -m 644 -t $FLATPAK_DEST/share/sounds/sf3 FluidR3Mono_GM.sf3
+      - ln -s $FLATPAK_DEST/share/sounds/sf3/{FluidR3Mono_GM,default-GM}.sf3
     sources:
-      - type: archive
-        url: http://deb.debian.org/debian/pool/main/f/fluid-soundfont/fluid-soundfont_3.1.orig.tar.gz
-        sha256: 2621acaa1c78e4abdb24bdd163230cc577e61276936d6aa6e3180582142f0343
+      - type: file
+        url: https://github.com/musescore/MuseScore/raw/2.1/share/sound/FluidR3Mono_GM.sf3
+        sha256: cfcd66d89e8386823400eca64934b14fbea7bf48ba1f00d21189af1262794ec2
 
   - name: lzo
     config-opts:
