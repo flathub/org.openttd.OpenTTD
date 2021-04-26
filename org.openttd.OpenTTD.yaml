@@ -68,8 +68,8 @@ modules:
         sha256: 5e65184e07368ba1afa62dbb3e35abaee6c4da6730ff4bc9eb4447d53363c7a8
         x-checker-data:
           type: html
-          url: https://www.openttd.org
-          version-pattern: 'Latest version: ((?:\d+\.)?(?:\d+\.)?\d+)'
+          url: https://www.openttd.org/downloads/openttd-releases/latest.html
+          version-pattern: 'Latest stable release in openttd is ([\d.]+)'
           url-template: https://cdn.openttd.org/openttd-releases/$version/openttd-$version-source.tar.xz
       - type: patch
         path: soundfont-path.patch
