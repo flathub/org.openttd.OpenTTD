@@ -84,12 +84,11 @@ modules:
       - type: file
         path: org.openttd.OpenTTD.metainfo.xml
 
-  - name: opengfx
+  - name: openttd-opengfx
     buildsystem: simple
     build-commands:
-      - tar -xf opengfx*.tar
-      - mkdir -p /app/share/games/openttd/baseset/opengfx
-      - cp -r opengfx*/* /app/share/games/openttd/baseset/opengfx
+      - tar -x -f opengfx-*.tar && rm opengfx-*.tar
+      - mv opengfx-* $FLATPAK_DEST/share/games/openttd/baseset/opengfx
     sources:
       - type: archive
         url: https://cdn.openttd.org/opengfx-releases/0.6.1/opengfx-0.6.1-all.zip
@@ -100,11 +99,11 @@ modules:
           stable-only: true
           url-template: https://cdn.openttd.org/opengfx-releases/$version/opengfx-$version-all.zip
 
-  - name: openmsx
+  - name: openttd-openmsx
     buildsystem: simple
     build-commands:
-      - mkdir -p /app/share/games/openttd/baseset/openmsx
-      - cp -r * /app/share/games/openttd/baseset/openmsx
+      - tar -x -f openmsx-*.tar && rm openmsx-*.tar
+      - mv openmsx-* $FLATPAK_DEST/share/games/openttd/baseset/openmsx
     sources:
       - type: archive
         url: https://cdn.openttd.org/openmsx-releases/0.4.0/openmsx-0.4.0-all.zip
@@ -115,11 +114,11 @@ modules:
           stable-only: true
           url-template: https://cdn.openttd.org/openmsx-releases/$version/openmsx-$version-all.zip
 
-  - name: opensfx
+  - name: openttd-opensfx
     buildsystem: simple
     build-commands:
-      - mkdir -p /app/share/games/openttd/baseset/opensfx
-      - cp -r * /app/share/games/openttd/baseset/opensfx
+      - tar -x -f opensfx-*.tar && rm opensfx-*.tar
+      - mv opensfx-* $FLATPAK_DEST/share/games/openttd/baseset/opensfx
     sources:
       - type: archive
         url: https://cdn.openttd.org/opensfx-releases/1.0.1/opensfx-1.0.1-all.zip
