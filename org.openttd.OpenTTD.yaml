@@ -83,8 +83,6 @@ modules:
           stable-only: true
           url-template: https://cdn.openttd.org/openttd-releases/$version/openttd-$version-source.tar.xz
           is-main-source: true
-      - type: patch
-        path: soundfont-path.patch
       - type: file
         path: org.openttd.OpenTTD.metainfo.xml
 
