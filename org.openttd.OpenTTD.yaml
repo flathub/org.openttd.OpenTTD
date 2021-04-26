@@ -27,6 +27,11 @@ modules:
       - type: archive
         url: https://github.com/FluidSynth/fluidsynth/archive/v2.1.8.tar.gz
         sha256: a254efceff5d99f8d658d12d25318317f37307e6df852ec9baeb7da173496967
+        x-checker-data:
+          type: anitya
+          project-id: 10437
+          stable-only: true
+          url-template: https://github.com/FluidSynth/fluidsynth/archive/v$version.tar.gz
 
   - name: musescore-general-soundfont
     buildsystem: simple
@@ -51,6 +56,11 @@ modules:
       - type: archive
         url: http://www.oberhumer.com/opensource/lzo/download/lzo-2.10.tar.gz
         sha256: c0f892943208266f9b6543b3ae308fab6284c5c90e627931446fb49b4221a072
+        x-checker-data:
+          type: anitya
+          project-id: 1868
+          stable-only: true
+          url-template: https://www.oberhumer.com/opensource/lzo/download/lzo-$version.tar.gz
 
   - name: openttd
     config-opts:
@@ -67,10 +77,11 @@ modules:
         url: https://cdn.openttd.org/openttd-releases/1.11.0/openttd-1.11.0-source.tar.xz
         sha256: 5e65184e07368ba1afa62dbb3e35abaee6c4da6730ff4bc9eb4447d53363c7a8
         x-checker-data:
-          type: html
-          url: https://www.openttd.org/downloads/openttd-releases/latest.html
-          version-pattern: 'Latest stable release in openttd is ([\d.]+)'
+          type: anitya
+          project-id: 8640
+          stable-only: true
           url-template: https://cdn.openttd.org/openttd-releases/$version/openttd-$version-source.tar.xz
+          is-main-source: true
       - type: patch
         path: soundfont-path.patch
       - type: file
@@ -84,13 +95,13 @@ modules:
       - cp -r opengfx*/* /app/share/games/openttd/baseset/opengfx
     sources:
       - type: archive
-        url: https://cdn.openttd.org/opengfx-releases/0.6.1/opengfx-0.6.1-all.zip
-        sha256: c694a112cd508d9c8fdad1b92bde05e7c48b14d66bad0c3999e443367437e37e
+        url: https://cdn.openttd.org/opengfx-releases/0.6.0/opengfx-0.6.0-all.zip
+        sha256: d419c0f5f22131de15f66ebefde464df3b34eb10e0645fe218c59cbc26c20774
         x-checker-data:
-          type: html
-          url: https://www.openttd.org/downloads/opengfx-releases/latest.html
-          version-pattern: 'Latest stable release in opengfx is ([\d.]+)'
-          url-template: https://cdn.openttd.org/opengfx-releases/$version/opengfx-$version-all.zip'
+          type: anitya
+          project-id: 9200
+          stable-only: true
+          url-template: https://cdn.openttd.org/opengfx-releases/$version/opengfx-$version-all.zip
 
   - name: openmsx
     buildsystem: simple
@@ -102,9 +113,9 @@ modules:
         url: https://cdn.openttd.org/openmsx-releases/0.3.1/openmsx-0.3.1-all.zip
         sha256: 92e293ae89f13ad679f43185e83fb81fb8cad47fe63f4af3d3d9f955130460f5
         x-checker-data:
-          type: html
-          url: https://www.openttd.org/downloads/openmsx-releases/latest.html
-          version-pattern: 'Latest stable release in openmsx is ([\d.]+)'
+          type: anitya
+          project-id: 88822
+          stable-only: true
           url-template: https://cdn.openttd.org/openmsx-releases/$version/openmsx-$version-all.zip
 
   - name: opensfx
@@ -117,7 +128,7 @@ modules:
         url: https://cdn.openttd.org/opensfx-releases/0.2.3/opensfx-0.2.3-all.zip
         sha256: 6831b651b3dc8b494026f7277989a1d757961b67c17b75d3c2e097451f75af02
         x-checker-data:
-          type: html
-          url: https://www.openttd.org/downloads/opensfx-releases/latest.html
-          version-pattern: 'Latest stable release in opensfx is ([\d.]+)'
+          type: anitya
+          project-id: 88821
+          stable-only: true
           url-template: https://cdn.openttd.org/opensfx-releases/$version/opensfx-$version-all.zip
