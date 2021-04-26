@@ -106,17 +106,16 @@ modules:
   - name: openmsx
     buildsystem: simple
     build-commands:
-      - mkdir -p /app/share/games/openttd/baseset/openmsx
-      - cp -r * /app/share/games/openttd/baseset/openmsx
+      - make install INSTALL_DIR=$FLATPAK_DEST/share/games/openttd/baseset/openmsx
     sources:
       - type: archive
-        url: https://cdn.openttd.org/openmsx-releases/0.3.1/openmsx-0.3.1-all.zip
-        sha256: 92e293ae89f13ad679f43185e83fb81fb8cad47fe63f4af3d3d9f955130460f5
+        url: https://cdn.openttd.org/openmsx-releases/0.4.0/openmsx-0.4.0-source.tar.xz
+        sha256: 13cc96abc57728f801c292f5728a5e9e00a0209e1ac7cc206cb8b7d7b4a4325f
         x-checker-data:
           type: anitya
           project-id: 88822
           stable-only: true
-          url-template: https://cdn.openttd.org/openmsx-releases/$version/openmsx-$version-all.zip
+          url-template: https://cdn.openttd.org/openmsx-releases/$version/openmsx-$version-source.tar.xz
 
   - name: opensfx
     buildsystem: simple
