@@ -84,8 +84,8 @@ modules:
       - cp -r opengfx*/* /app/share/games/openttd/baseset/opengfx
     sources:
       - type: archive
-        url: https://cdn.openttd.org/opengfx-releases/0.6.0/opengfx-0.6.0-all.zip
-        sha256: d419c0f5f22131de15f66ebefde464df3b34eb10e0645fe218c59cbc26c20774
+        url: https://cdn.openttd.org/opengfx-releases/0.6.1/opengfx-0.6.1-all.zip
+        sha256: c694a112cd508d9c8fdad1b92bde05e7c48b14d66bad0c3999e443367437e37e
 
   - name: openmsx
     buildsystem: simple
