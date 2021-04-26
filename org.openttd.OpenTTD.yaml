@@ -106,3 +106,8 @@ modules:
       - type: archive
         url: https://cdn.openttd.org/opensfx-releases/0.2.3/opensfx-0.2.3-all.zip
         sha256: 6831b651b3dc8b494026f7277989a1d757961b67c17b75d3c2e097451f75af02
+        x-checker-data:
+          type: html
+          url: https://www.openttd.org/downloads/opensfx-releases/latest.html
+          version-pattern: 'Latest stable release in opensfx is ([\d.]+)'
+          url-template: https://cdn.openttd.org/opensfx-releases/$version/opensfx-$version-all.zip
