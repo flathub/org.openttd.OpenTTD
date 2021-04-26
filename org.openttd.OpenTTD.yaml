@@ -69,8 +69,6 @@ modules:
     buildsystem: cmake-ninja
     builddir: true
     post-install:
-      - for s in 16 32 48 64 128 256; do install -D -m 644 -t $FLATPAK_DEST/share/icons/hicolor/${s}x${s}/apps
-        ../media/openttd.${s}.png; done
       - install -D -m 644 -t $FLATPAK_DEST/share/icons/hicolor/scalable/apps ../media/openttd.svg
       - install -D -m 644 -t $FLATPAK_DEST/share/metainfo ../org.openttd.OpenTTD.metainfo.xml
     sources:
