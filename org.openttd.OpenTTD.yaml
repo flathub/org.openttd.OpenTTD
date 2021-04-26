@@ -25,8 +25,8 @@ modules:
       - /share
     sources:
       - type: archive
-        url: https://github.com/FluidSynth/fluidsynth/archive/v2.1.8.tar.gz
-        sha256: a254efceff5d99f8d658d12d25318317f37307e6df852ec9baeb7da173496967
+        url: https://github.com/FluidSynth/fluidsynth/archive/v2.2.0.tar.gz
+        sha256: 928fb16f307507485bd1d9b010dafba8c747bce5de2ba47ab1705944c87013b6
         x-checker-data:
           type: anitya
           project-id: 10437
@@ -54,7 +54,7 @@ modules:
       - /share
     sources:
       - type: archive
-        url: http://www.oberhumer.com/opensource/lzo/download/lzo-2.10.tar.gz
+        url: https://www.oberhumer.com/opensource/lzo/download/lzo-2.10.tar.gz
         sha256: c0f892943208266f9b6543b3ae308fab6284c5c90e627931446fb49b4221a072
         x-checker-data:
           type: anitya
@@ -69,13 +69,14 @@ modules:
     buildsystem: cmake-ninja
     builddir: true
     post-install:
-      - for s in 16 32 48 64 128 256; do install -D -m 644 -t $FLATPAK_DEST/share/icons/hicolor/${s}x${s}/apps ../media/openttd.${s}.png; done
+      - for s in 16 32 48 64 128 256; do install -D -m 644 -t $FLATPAK_DEST/share/icons/hicolor/${s}x${s}/apps
+        ../media/openttd.${s}.png; done
       - install -D -m 644 -t $FLATPAK_DEST/share/icons/hicolor/scalable/apps ../media/openttd.svg
       - install -D -m 644 -t $FLATPAK_DEST/share/metainfo ../org.openttd.OpenTTD.metainfo.xml
     sources:
       - type: archive
-        url: https://cdn.openttd.org/openttd-releases/1.11.0/openttd-1.11.0-source.tar.xz
-        sha256: 5e65184e07368ba1afa62dbb3e35abaee6c4da6730ff4bc9eb4447d53363c7a8
+        url: https://cdn.openttd.org/openttd-releases/1.11.1/openttd-1.11.1-source.tar.xz
+        sha256: a9919e2e429bb08fa29fe8e67ba9bc75c90e9ef6fa64248eb34223a325d400a3
         x-checker-data:
           type: anitya
           project-id: 8640
@@ -110,8 +111,8 @@ modules:
       - cp -r * /app/share/games/openttd/baseset/openmsx
     sources:
       - type: archive
-        url: https://cdn.openttd.org/openmsx-releases/0.3.1/openmsx-0.3.1-all.zip
-        sha256: 92e293ae89f13ad679f43185e83fb81fb8cad47fe63f4af3d3d9f955130460f5
+        url: https://cdn.openttd.org/openmsx-releases/0.4.0/openmsx-0.4.0-all.zip
+        sha256: 7698cadf06c44fb5e847a5773a22a4a1ea4fc0cf45664181254656f9e1b27ee2
         x-checker-data:
           type: anitya
           project-id: 88822
@@ -125,8 +126,8 @@ modules:
       - cp -r * /app/share/games/openttd/baseset/opensfx
     sources:
       - type: archive
-        url: https://cdn.openttd.org/opensfx-releases/0.2.3/opensfx-0.2.3-all.zip
-        sha256: 6831b651b3dc8b494026f7277989a1d757961b67c17b75d3c2e097451f75af02
+        url: https://cdn.openttd.org/opensfx-releases/1.0.1/opensfx-1.0.1-all.zip
+        sha256: 37b825426f1d690960313414423342733520d08916f512f30f7aaf30910a36c5
         x-checker-data:
           type: anitya
           project-id: 88821
