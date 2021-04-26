@@ -86,6 +86,11 @@ modules:
       - type: archive
         url: https://cdn.openttd.org/opengfx-releases/0.6.1/opengfx-0.6.1-all.zip
         sha256: c694a112cd508d9c8fdad1b92bde05e7c48b14d66bad0c3999e443367437e37e
+        x-checker-data:
+          type: html
+          url: https://www.openttd.org/downloads/opengfx-releases/latest.html
+          version-pattern: 'Latest stable release in opengfx is ([\d.]+)'
+          url-template: https://cdn.openttd.org/opengfx-releases/$version/opengfx-$version-all.zip'
 
   - name: openmsx
     buildsystem: simple
