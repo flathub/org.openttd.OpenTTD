@@ -81,6 +81,8 @@ modules:
           stable-only: true
           url-template: https://cdn.openttd.org/openttd-releases/$version/openttd-$version-source.tar.xz
           is-main-source: true
+      - type: patch
+        path: fix-video-buffer-mapping.patch
       - type: file
         path: org.openttd.OpenTTD.metainfo.xml
 

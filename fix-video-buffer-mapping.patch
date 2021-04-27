@@ -1,0 +1,50 @@
+From 894326a3c064f64116a7bfeab84fa0f9318d0702 Mon Sep 17 00:00:00 2001
+From: Michael Lutz <michi@icosahedron.de>
+Date: Sun, 25 Apr 2021 00:08:59 +0200
+Subject: [PATCH] Fix: [OpenGL] Main loop expects to start with the video
+ buffer unmapped.
+
+---
+ src/video/opengl.cpp        | 1 +
+ src/video/sdl2_opengl_v.cpp | 2 ++
+ src/video/win32_v.cpp       | 2 ++
+ 3 files changed, 5 insertions(+)
+
+diff --git a/src/video/opengl.cpp b/src/video/opengl.cpp
+index 1eab9b10e3..ecafeb6138 100644
+--- a/src/video/opengl.cpp
++++ b/src/video/opengl.cpp
+@@ -1154,6 +1154,7 @@ void *OpenGLBackend::GetVideoBuffer()
+ #endif
+ 
+ 	if (!this->persistent_mapping_supported) {
++		assert(this->vid_buffer == nullptr);
+ 		_glBindBuffer(GL_PIXEL_UNPACK_BUFFER, this->vid_pbo);
+ 		this->vid_buffer = _glMapBuffer(GL_PIXEL_UNPACK_BUFFER, GL_READ_WRITE);
+ 	} else if (this->vid_buffer == nullptr) {
+diff --git a/src/video/sdl2_opengl_v.cpp b/src/video/sdl2_opengl_v.cpp
+index 9c84c36b1c..003e194380 100644
+--- a/src/video/sdl2_opengl_v.cpp
++++ b/src/video/sdl2_opengl_v.cpp
+@@ -74,6 +74,8 @@ const char *VideoDriver_SDL_OpenGL::Start(const StringList &param)
+ 		this->Stop();
+ 		return "Can't get pointer to screen buffer";
+ 	}
++	/* Main loop expects to start with the buffer unmapped. */
++	this->ReleaseVideoPointer();
+ 
+ 	return nullptr;
+ }
+diff --git a/src/video/win32_v.cpp b/src/video/win32_v.cpp
+index 1dc1db8cef..f0291db714 100644
+--- a/src/video/win32_v.cpp
++++ b/src/video/win32_v.cpp
+@@ -1311,6 +1311,8 @@ const char *VideoDriver_Win32OpenGL::Start(const StringList &param)
+ 		_cur_resolution = old_res;
+ 		return "Can't get pointer to screen buffer";
+ 	}
++	/* Main loop expects to start with the buffer unmapped. */
++	this->ReleaseVideoPointer();
+ 
+ 	MarkWholeScreenDirty();
+ 
