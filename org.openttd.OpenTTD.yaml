@@ -17,7 +17,6 @@ modules:
     buildsystem: cmake
     config-opts:
       - -DLIB_INSTALL_DIR:STRING=lib
-      - -DDEFAULT_SOUNDFONT:FILEPATH=/app/share/sounds/sf3/default-GM.sf3
     cleanup:
       - /bin
       - /include
@@ -33,15 +32,15 @@ modules:
           stable-only: true
           url-template: https://github.com/FluidSynth/fluidsynth/archive/v$version.tar.gz
 
-  - name: musescore-general-soundfont
+  - name: opl3-soundfont
     buildsystem: simple
     build-commands:
-      - install -D -m 644 -t $FLATPAK_DEST/share/sounds/sf3 MuseScore_General.sf3
-      - ln -s $FLATPAK_DEST/share/sounds/sf3/{MuseScore_General,default-GM}.sf3
+      - install -D -m 644 -t $FLATPAK_DEST/share/soundfonts OPL-3_FM_128M.sf2
+      - ln -s $FLATPAK_DEST/share/soundfonts/{OPL-3_FM_128M,default}.sf2
     sources:
-      - type: file
-        url: https://ftp.osuosl.org/pub/musescore/soundfont/MuseScore_General/MuseScore_General.sf3
-        sha256: 5b85b6c2c61d10b2b91cddd41efcce7b25cd31c8271d511c73afafbef20b6fa3
+      - type: archive
+        url: https://musical-artifacts.com/artifacts/15/OPL-3_FM_128M.zip
+        sha256: 0ab38927549179aeb2289493e271bf16a681fd4192d16b027d0460533c4d9257
 
   - name: lzo
     config-opts:
