@@ -91,8 +91,8 @@ modules:
       - mv opengfx-* $FLATPAK_DEST/share/games/openttd/baseset/opengfx
     sources:
       - type: archive
-        url: https://cdn.openttd.org/opengfx-releases/7.0/opengfx-7.0-all.zip
-        sha256: 5ae07200e5d24bfc7e07aecf5c3b5e60b74d938348896989c3b4c1d7e39c08c9
+        url: https://cdn.openttd.org/opengfx-releases/7.1/opengfx-7.1-all.zip
+        sha256: 928fcf34efd0719a3560cbab6821d71ce686b6315e8825360fba87a7a94d7846
         x-checker-data:
           type: anitya
           project-id: 9200
