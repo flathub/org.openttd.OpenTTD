@@ -121,8 +121,8 @@ modules:
       - mv opensfx-* $FLATPAK_DEST/share/games/openttd/baseset/opensfx
     sources:
       - type: archive
-        url: https://cdn.openttd.org/opensfx-releases/1.0.1/opensfx-1.0.1-all.zip
-        sha256: 37b825426f1d690960313414423342733520d08916f512f30f7aaf30910a36c5
+        url: https://cdn.openttd.org/opensfx-releases/1.0.2/opensfx-1.0.2-all.zip
+        sha256: 4814f5374eb8da0df888a4e38c3edbff3e6e3ddbb4ab13aae6933a0df3c0d333
         x-checker-data:
           type: anitya
           project-id: 88821
