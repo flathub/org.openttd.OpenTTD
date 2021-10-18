@@ -73,8 +73,8 @@ modules:
       - install -D -m 644 -t $FLATPAK_DEST/share/metainfo ../org.openttd.OpenTTD.metainfo.xml
     sources:
       - type: archive
-        url: https://cdn.openttd.org/openttd-releases/1.11.2/openttd-1.11.2-source.tar.xz
-        sha256: 0fba935a2a815f4fe8cd6dc2e2ae33f72769538731228f848a63b3a6e9482e6d
+        url: https://cdn.openttd.org/openttd-releases/12.0/openttd-12.0-source.tar.xz
+        sha256: bba0fd3800df0370259e642d251f362c7c00b478a2e3531f6ba7f84c1c2b32dc
         x-checker-data:
           type: anitya
           project-id: 8640
@@ -121,8 +121,8 @@ modules:
       - mv opensfx-* $FLATPAK_DEST/share/games/openttd/baseset/opensfx
     sources:
       - type: archive
-        url: https://cdn.openttd.org/opensfx-releases/1.0.1/opensfx-1.0.1-all.zip
-        sha256: 37b825426f1d690960313414423342733520d08916f512f30f7aaf30910a36c5
+        url: https://cdn.openttd.org/opensfx-releases/1.0.2/opensfx-1.0.2-all.zip
+        sha256: 4814f5374eb8da0df888a4e38c3edbff3e6e3ddbb4ab13aae6933a0df3c0d333
         x-checker-data:
           type: anitya
           project-id: 88821
