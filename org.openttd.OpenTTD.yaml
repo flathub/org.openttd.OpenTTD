@@ -136,8 +136,8 @@ modules:
       - mv openmsx-* $FLATPAK_DEST/share/games/openttd/baseset/openmsx
     sources:
       - type: archive
-        url: https://cdn.openttd.org/openmsx-releases/0.4.0/openmsx-0.4.0-all.zip
-        sha256: 7698cadf06c44fb5e847a5773a22a4a1ea4fc0cf45664181254656f9e1b27ee2
+        url: https://cdn.openttd.org/openmsx-releases/0.4.2/openmsx-0.4.2-all.zip
+        sha256: 5a4277a2e62d87f2952ea5020dc20fb2f6ffafdccf9913fbf35ad45ee30ec762
         x-checker-data:
           type: anitya
           project-id: 88822
