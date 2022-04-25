@@ -23,8 +23,8 @@ modules:
       - /share
     sources:
       - type: archive
-        url: https://www.libsdl.org/release/SDL2-2.0.20.tar.gz
-        sha256: c56aba1d7b5b0e7e999e4a7698c70b63a3394ff9704b5f6e1c57e0c16f04dd06
+        url: https://www.libsdl.org/release/SDL2-2.0.22.tar.gz
+        sha256: fe7cbf3127882e3fc7259a75a0cb585620272c51745d3852ab9dd87960697f2e
         x-checker-data:
           type: anitya
           project-id: 4779
@@ -55,8 +55,8 @@ modules:
       - /share
     sources:
       - type: archive
-        url: https://github.com/FluidSynth/fluidsynth/archive/v2.2.6.tar.gz
-        sha256: ca90fe675cacd9a7b442662783c4e7fa0e1fd638b28d64105a4e3fe0f618d20f
+        url: https://github.com/FluidSynth/fluidsynth/archive/v2.2.7.tar.gz
+        sha256: 460d86d8d687f567dc4780890b72538c7ff6b2082080ef2f9359d41670a309cf
         x-checker-data:
           type: anitya
           project-id: 10437
