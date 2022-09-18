@@ -67,7 +67,7 @@ modules:
     buildsystem: simple
     build-commands:
       - install -D -m 644 -t $FLATPAK_DEST/share/sounds/sf3 MuseScore_General.sf3
-      - ln -s $FLATPAK_DEST/share/sounds/sf3/{MuseScore_General,default-GM}.sf3
+      - ln -rs $FLATPAK_DEST/share/sounds/sf3/{MuseScore_General,default-GM}.sf3
     sources:
       - type: file
         url: https://ftp.osuosl.org/pub/musescore/soundfont/MuseScore_General/MuseScore_General.sf3
