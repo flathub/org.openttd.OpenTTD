@@ -11,7 +11,7 @@ finish-args:
   - --share=ipc
   - --share=network
   - --socket=pulseaudio
-  - --socket=wayland
+  - --socket=x11
 modules:
   - name: SDL2
     buildsystem: autotools
