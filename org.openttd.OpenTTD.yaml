@@ -11,8 +11,9 @@ finish-args:
   - --share=ipc
   - --share=network
   - --socket=pulseaudio
-  - --socket=wayland
-  - --socket=fallback-x11
+#   - --socket=wayland
+#   - --socket=fallback-x11
+  - --socket=x11 #https://github.com/flathub/org.openttd.OpenTTD/issues/93
 modules:
   - shared-modules/libdecor/libdecor-0.1.1.json
   
