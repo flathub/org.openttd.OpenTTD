@@ -14,7 +14,7 @@ finish-args:
   - --socket=x11  # https://github.com/flathub/org.openttd.OpenTTD/issues/93
 modules:
   - shared-modules/libdecor/libdecor-0.1.1.json
-  
+
   - shared-modules/SDL2/SDL2-2.26.1.json
 
   - name: fluidsynth
@@ -29,8 +29,8 @@ modules:
       - /share
     sources:
       - type: archive
-        url: https://github.com/FluidSynth/fluidsynth/archive/v2.3.0.tar.gz
-        sha256: 1df5a1afb91acf3b945b7fdb89ac0d99877622161d9b5155533da59113eaaa20
+        url: https://github.com/FluidSynth/fluidsynth/archive/v2.3.1.tar.gz
+        sha256: d734e4cf488be763cf123e5976f3154f0094815093eecdf71e0e9ae148431883
         x-checker-data:
           type: anitya
           project-id: 10437
