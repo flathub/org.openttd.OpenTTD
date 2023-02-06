@@ -15,25 +15,7 @@ finish-args:
 modules:
   - shared-modules/SDL2/SDL2-with-libdecor.json
 
-  - name: fluidsynth
-    buildsystem: cmake
-    config-opts:
-      - -DLIB_INSTALL_DIR:STRING=lib
-      - -DDEFAULT_SOUNDFONT:FILEPATH=/app/share/sounds/sf3/default-GM.sf3
-    cleanup:
-      - /bin
-      - /include
-      - /lib/pkgconfig
-      - /share
-    sources:
-      - type: archive
-        url: https://github.com/FluidSynth/fluidsynth/archive/v2.3.1.tar.gz
-        sha256: d734e4cf488be763cf123e5976f3154f0094815093eecdf71e0e9ae148431883
-        x-checker-data:
-          type: anitya
-          project-id: 10437
-          stable-only: true
-          url-template: https://github.com/FluidSynth/fluidsynth/archive/v$version.tar.gz
+  - shared-modules/linux-audio/fluidsynth2.json
 
   - name: musescore-general-soundfont
     buildsystem: simple
