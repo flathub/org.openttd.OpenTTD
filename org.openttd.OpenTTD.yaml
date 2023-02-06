@@ -67,6 +67,8 @@ modules:
           is-main-source: true
       - type: file
         path: org.openttd.OpenTTD.metainfo.xml
+      - type: patch
+        path: 0001-Fix-mouse-issues-on-Wayland.patch
 
   - name: openttd-opengfx
     buildsystem: simple
