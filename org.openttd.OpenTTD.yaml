@@ -11,7 +11,7 @@ finish-args:
   - --share=ipc
   - --share=network
   - --socket=pulseaudio
-  - --socket=x11  # https://github.com/flathub/org.openttd.OpenTTD/issues/93
+  - --socket=wayland
 modules:
   - shared-modules/SDL2/SDL2-with-libdecor.json
 
