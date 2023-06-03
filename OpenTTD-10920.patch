@@ -1,0 +1,60 @@
+From 6a818189242d54f06aa020a2ca77828d65bbd0df Mon Sep 17 00:00:00 2001
+From: Patric Stout <truebrain@openttd.org>
+Date: Sat, 3 Jun 2023 22:48:16 +0200
+Subject: [PATCH] Add: [SDL] change mouse mode if warping doesn't work
+
+It is unpredictable whether a backend actually supports warping
+the mouse. So do a smoke-test on startup and if it isn't supported,
+simply change the mouse mode to one that doesn't require locking.
+---
+ src/table/settings/gui_settings.ini |  2 ++
+ src/video/sdl2_v.cpp                | 16 ++++++++++++++++
+ 2 files changed, 18 insertions(+)
+
+diff --git a/src/table/settings/gui_settings.ini b/src/table/settings/gui_settings.ini
+index 08f43b66615e..2afd440edc59 100644
+--- a/src/table/settings/gui_settings.ini
++++ b/src/table/settings/gui_settings.ini
+@@ -109,6 +109,7 @@ str      = STR_CONFIG_SETTING_SCROLLMODE
+ strhelp  = STR_CONFIG_SETTING_SCROLLMODE_HELPTEXT
+ strval   = STR_CONFIG_SETTING_SCROLLMODE_DEFAULT
+ cat      = SC_BASIC
++startup  = true
+ 
+ [SDTC_VAR]
+ ifndef    = __EMSCRIPTEN__
+@@ -122,6 +123,7 @@ str      = STR_CONFIG_SETTING_SCROLLMODE
+ strhelp  = STR_CONFIG_SETTING_SCROLLMODE_HELPTEXT
+ strval   = STR_CONFIG_SETTING_SCROLLMODE_DEFAULT
+ cat      = SC_BASIC
++startup  = true
+ 
+ [SDTC_BOOL]
+ var      = gui.smooth_scroll
+diff --git a/src/video/sdl2_v.cpp b/src/video/sdl2_v.cpp
+index 6f6cb5156172..aec151b9c0ec 100644
+--- a/src/video/sdl2_v.cpp
++++ b/src/video/sdl2_v.cpp
+@@ -623,6 +623,22 @@ void VideoDriver_SDL_Base::LoopOnce()
+ 
+ void VideoDriver_SDL_Base::MainLoop()
+ {
++	/* We smoketest if the backend supports actually moving the
++	 * mouse. There is really no other way to detect it, as even
++	 * if, say, X11 reports it did it, X11-servers like remote
++	 * desktops or WSLg don't actually execute it. So the best
++	 * way to learn is to try. */
++	if (_settings_client.gui.scroll_mode == VSM_VIEWPORT_RMB_FIXED || _settings_client.gui.scroll_mode == VSM_MAP_RMB_FIXED) {
++		int x_before, x_after, y;
++		SDL_GetMouseState(&x_before, &y);
++		SDL_WarpMouseInWindow(this->sdl_window, x_before + 1, y);
++		SDL_GetMouseState(&x_after, &y);
++		if (x_before == x_after) {
++			Debug(driver, 1, "SDL backend doesn't support warping the mouse; switching to non-fixed scroll mode");
++			_settings_client.gui.scroll_mode = VSM_MAP_RMB;
++		}
++	}
++
+ #ifdef __EMSCRIPTEN__
+ 	/* Run the main loop event-driven, based on RequestAnimationFrame. */
+ 	emscripten_set_main_loop_arg(&this->EmscriptenLoop, this, 0, 1);
