@@ -69,6 +69,8 @@ modules:
         path: org.openttd.OpenTTD.metainfo.xml
       - type: patch
         path: OpenTTD-10919.patch
+      - type: patch
+        path: OpenTTD-10920.patch
 
   - name: openttd-opengfx
     buildsystem: simple

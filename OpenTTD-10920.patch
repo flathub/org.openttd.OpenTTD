@@ -1,0 +1,49 @@
+From b1b8162e1081462adab805755b32e7f03a251d77 Mon Sep 17 00:00:00 2001
+From: Patric Stout <truebrain@openttd.org>
+Date: Sat, 3 Jun 2023 22:48:16 +0200
+Subject: [PATCH] Add: [SDL] change default scroll mode to non-mouse-lock
+
+Wayland doesn't support mouse warping, X11 only for native
+systems (so not for remote desktop, WSLg, etc), and emscripten
+neither without complications. All these cannot offer a
+mouse-lock.
+---
+ src/lang/english.txt                | 2 +-
+ src/table/settings/gui_settings.ini | 4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/src/lang/english.txt b/src/lang/english.txt
+index f5ed7798159..0c4e06aff66 100644
+--- a/src/lang/english.txt
++++ b/src/lang/english.txt
+@@ -1558,7 +1558,7 @@ STR_CONFIG_SETTING_LINKGRAPH_COLOURS_GREY_TO_RED                :Grey to red
+ STR_CONFIG_SETTING_LINKGRAPH_COLOURS_GREYSCALE                  :Greyscale
+ 
+ STR_CONFIG_SETTING_SCROLLMODE                                   :Viewport scroll behaviour: {STRING2}
+-STR_CONFIG_SETTING_SCROLLMODE_HELPTEXT                          :Behaviour when scrolling the map
++STR_CONFIG_SETTING_SCROLLMODE_HELPTEXT                          :Behaviour when scrolling the map. The "mouse position locked" options don't work on all systems, like web-based versions, touchscreens, Linux with Wayland, and others
+ ###length 4
+ STR_CONFIG_SETTING_SCROLLMODE_DEFAULT                           :Move viewport with RMB, mouse position locked
+ STR_CONFIG_SETTING_SCROLLMODE_RMB_LOCKED                        :Move map with RMB, mouse position locked
+diff --git a/src/table/settings/gui_settings.ini b/src/table/settings/gui_settings.ini
+index 08f43b66615..d2dc032fb6e 100644
+--- a/src/table/settings/gui_settings.ini
++++ b/src/table/settings/gui_settings.ini
+@@ -98,7 +98,7 @@ strval   = STR_CONFIG_SETTING_AUTOSCROLL_DISABLED
+ cat      = SC_BASIC
+ 
+ [SDTC_VAR]
+-ifdef    = __EMSCRIPTEN__
++ifdef    = UNIX
+ var      = gui.scroll_mode
+ type     = SLE_UINT8
+ flags    = SF_NOT_IN_SAVE | SF_NO_NETWORK_SYNC | SF_GUI_DROPDOWN
+@@ -111,7 +111,7 @@ strval   = STR_CONFIG_SETTING_SCROLLMODE_DEFAULT
+ cat      = SC_BASIC
+ 
+ [SDTC_VAR]
+-ifndef    = __EMSCRIPTEN__
++ifndef    = UNIX
+ var      = gui.scroll_mode
+ type     = SLE_UINT8
+ flags    = SF_NOT_IN_SAVE | SF_NO_NETWORK_SYNC | SF_GUI_DROPDOWN
