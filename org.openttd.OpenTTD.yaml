@@ -57,8 +57,8 @@ modules:
       - install -D -m 644 -t $FLATPAK_DEST/share/metainfo ../org.openttd.OpenTTD.metainfo.xml
     sources:
       - type: archive
-        url: https://cdn.openttd.org/openttd-releases/13.2.1/openttd-13.2.1-source.tar.xz
-        sha256: baa4b39ad0158bd13f6aee472667a0fbf655c7576d4f8d18b1005c8ffa866576
+        url: https://cdn.openttd.org/openttd-releases/13.3/openttd-13.3-source.tar.xz
+        sha256: aafa16d2fb67165134c73a888f79f7a5ed7da17a04cf6e9ecf672c9cb89e7192
         x-checker-data:
           type: anitya
           project-id: 8640
@@ -67,10 +67,6 @@ modules:
           is-main-source: true
       - type: file
         path: org.openttd.OpenTTD.metainfo.xml
-      - type: patch
-        path: OpenTTD-10919.patch
-      - type: patch
-        path: OpenTTD-10920.patch
 
   - name: openttd-opengfx
     buildsystem: simple

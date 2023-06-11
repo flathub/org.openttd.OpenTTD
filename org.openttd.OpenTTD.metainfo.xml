@@ -36,7 +36,9 @@
     <binary>openttd</binary>
   </provides>
   <releases>
+    <release version="13.3" date="2023-06-11"/>
     <release version="13.2.1" date="2023-06-11"/>
+    <release version="13.2" date="2023-06-10"/>
     <release version="13.1" date="2023-04-10"/>
     <release version="13.0" date="2023-02-05"/>
     <release version="12.2" date="2022-04-02"/>
