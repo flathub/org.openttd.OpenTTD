@@ -12,6 +12,7 @@ finish-args:
   - --share=network
   - --socket=pulseaudio
   - --socket=wayland
+  - --socket=x11
 modules:
   - shared-modules/SDL2/SDL2-with-libdecor.json
 
