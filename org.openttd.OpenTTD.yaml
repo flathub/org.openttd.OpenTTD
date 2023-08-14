@@ -11,7 +11,7 @@ finish-args:
   - --share=ipc
   - --share=network
   - --socket=pulseaudio
-  - --socket=wayland
+  - --socket=fallback-x11
 modules:
   - shared-modules/SDL2/SDL2-with-libdecor.json
 
