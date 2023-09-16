@@ -14,8 +14,6 @@ finish-args:
   - --socket=wayland
   - --socket=fallback-x11
 modules:
-  - shared-modules/SDL2/SDL2-with-libdecor.json
-
   - shared-modules/linux-audio/fluidsynth2.json
 
   - name: opl3-soundfont
