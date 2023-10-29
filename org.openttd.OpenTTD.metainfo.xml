@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Copyright 2018-2020 Flathub maintainers-->
+<!--Copyright 2018-2023 Flathub maintainers-->
 <component type="desktop-application">
   <id>org.openttd.OpenTTD.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
-  <project_license>GPL-2</project_license>
+  <project_license>GPL-2.0-only</project_license>
   <name>OpenTTD</name>
   <summary>Open source simulation game based upon Transport Tycoon Deluxe</summary>
   <description>
@@ -53,5 +53,7 @@
     <release version="1.10.1" date="2020-04-13"/>
     <release version="1.10.0" date="2020-04-01"/>
   </releases>
-  <content_rating type="oars-1.1"/>
+  <content_rating type="oars-1.1">
+    <content_attribute id="social-chat">intense</content_attribute>
+  </content_rating>
 </component>
