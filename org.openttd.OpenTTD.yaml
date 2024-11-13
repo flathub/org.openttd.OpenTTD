@@ -23,8 +23,8 @@ modules:
       - ln -s $FLATPAK_DEST/share/soundfonts/{OPL-3_FM_128M,default}.sf2
     sources:
       - type: file
-        url: https://github.com/Mindwerks/opl3-soundfont/releases/download/1.0/OPL-3_FM_128M.sf2
-        sha256: 39bff96eee3dcfbce9665e3968701b894ca2136c7d0bd580281b2bbf59e80392
+        url: https://gitlab.com/psi29a/opl3-soundfont/-/raw/1.1/OPL-3_FM_128M.sf2
+        sha256: 800887998e40507a774b70a3f6c07729d2584802eec82b35be33f393dceaee0b
 
   - name: lzo
     config-opts:
