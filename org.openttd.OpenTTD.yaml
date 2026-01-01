@@ -56,8 +56,8 @@ modules:
       - install -D -m 644 -t $FLATPAK_DEST/share/metainfo ../org.openttd.OpenTTD.metainfo.xml
     sources:
       - type: archive
-        url: https://cdn.openttd.org/openttd-releases/14.1/openttd-14.1-source.tar.xz
-        sha256: 2c14c8f01f44148c4f2c88c169a30abcdb002eb128a92b9adb76baa76b013494
+        url: https://cdn.openttd.org/openttd-releases/15.0/openttd-15.0-source.tar.xz
+        sha256: 3552d774bb246f360b0a0d35436946007fcd48b2698ef1d7dfa30032ac3135c1
         x-checker-data:
           type: anitya
           project-id: 8640
