@@ -26,25 +26,6 @@ modules:
         url: https://gitlab.com/psi29a/opl3-soundfont/-/raw/1.1/OPL-3_FM_128M.sf2
         sha256: 800887998e40507a774b70a3f6c07729d2584802eec82b35be33f393dceaee0b
 
-  - name: lzo
-    config-opts:
-      - --enable-shared
-      - --disable-static
-    cleanup:
-      - /include
-      - /lib/*.la
-      - /lib/pkgconfig
-      - /share
-    sources:
-      - type: archive
-        url: https://www.oberhumer.com/opensource/lzo/download/lzo-2.10.tar.gz
-        sha256: c0f892943208266f9b6543b3ae308fab6284c5c90e627931446fb49b4221a072
-        x-checker-data:
-          type: anitya
-          project-id: 1868
-          stable-only: true
-          url-template: https://www.oberhumer.com/opensource/lzo/download/lzo-$version.tar.gz
-
   - name: openttd
     config-opts:
       - -DCMAKE_BUILD_TYPE:STRING=RelWithDebInfo
