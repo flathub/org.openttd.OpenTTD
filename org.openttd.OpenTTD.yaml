@@ -20,11 +20,16 @@ modules:
     buildsystem: simple
     build-commands:
       - install -D -m 644 -t $FLATPAK_DEST/share/soundfonts OPL-3_FM_128M.sf2
+      - install -D -m 644 -t $FLATPAK_DEST/share/licenses/$FLATPAK_ID/opl3-soundfont LICENSE
       - ln -s $FLATPAK_DEST/share/soundfonts/{OPL-3_FM_128M,default}.sf2
     sources:
-      - type: file
-        url: https://gitlab.com/psi29a/opl3-soundfont/-/raw/1.1/OPL-3_FM_128M.sf2
-        sha256: 800887998e40507a774b70a3f6c07729d2584802eec82b35be33f393dceaee0b
+      - type: archive
+        url: https://gitlab.com/psi29a/opl3-soundfont/-/archive/1.1/opl3-soundfont-1.1.tar.gz
+        sha256: 990f2a1bc96c77892511e973beb97dc61e6aea9b5ff76af73999816bac7b45a1
+        x-checker-data:
+          type: git
+          tag-pattern: '^([0-9.]+)$'
+          url-template: https://gitlab.com/psi29a/opl3-soundfont/-/archive/$version/opl3-soundfont-$version.tar.gz
 
   - name: openttd
     config-opts:
@@ -32,6 +37,8 @@ modules:
       - -DCMAKE_INSTALL_BINDIR:STRING=bin
     buildsystem: cmake-ninja
     builddir: true
+    license-files:
+      - COPYING.md
     post-install:
       - install -D -m 644 -t $FLATPAK_DEST/share/icons/hicolor/scalable/apps ../media/openttd.svg
       - install -D -m 644 -t $FLATPAK_DEST/share/metainfo ../org.openttd.OpenTTD.metainfo.xml

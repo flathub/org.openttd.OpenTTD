@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Copyright 2018-2023 Flathub maintainers-->
+<!-- Copyright 2018-2026 Flathub maintainers -->
 <component type="desktop-application">
-  <id>org.openttd.OpenTTD.desktop</id>
+  <id>org.openttd.OpenTTD</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0-only</project_license>
   <name>OpenTTD</name>
@@ -17,7 +17,7 @@
   <url type="homepage">https://www.openttd.org</url>
   <url type="bugtracker">https://github.com/OpenTTD/OpenTTD/issues</url>
   <url type="vcs-browser">https://github.com/OpenTTD/OpenTTD</url>
-  <launchable type="desktop-id">openttd.desktop</launchable>
+  <launchable type="desktop-id">org.openttd.OpenTTD.desktop</launchable>
   <developer id="org.openttd">
     <name>The OpenTTD team</name>
   </developer>
@@ -31,15 +31,19 @@
   <screenshots>
     <screenshot type="default">
       <image>https://www.openttd.org/screenshots/1.4-02-opengfx-1920x1200.png</image>
+      <caption>Plan and manage a growing transport empire</caption>
     </screenshot>
     <screenshot>
       <image>https://www.openttd.org/screenshots/1.9-darkuk-1.png</image>
+      <caption>Expand your company by connecting towns with rail and road routes</caption>
     </screenshot>
     <screenshot>
       <image>https://www.openttd.org/screenshots/1.9-darkuk-2.png</image>
+      <caption>Build efficient railway networks to move passengers and cargo</caption>
     </screenshot>
     <screenshot>
       <image>https://www.openttd.org/screenshots/1.9-darkuk-3.png</image>
+      <caption>Develop a profitable transport network across land and sea</caption>
     </screenshot>
   </screenshots>
   <releases>
